@@ -1,7 +1,7 @@
 Comandos dia a dia
 
 
-## LVM
+## Extend a existent LVM disk
 
 ```shell
 
@@ -29,6 +29,12 @@ resize2fs /dev/vg01/lv01
 /dev/vg02/lv02
 
 
+
+
+```
+
+### Create a new LVM volume
+```shell
 #### Create a new LVM volume
 
 fdisk -l
