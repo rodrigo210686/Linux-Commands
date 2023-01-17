@@ -69,3 +69,25 @@ mount /dev/vg02/lv02 /logs
 
 
 ```
+
+
+### Compactar arquivos em partes
+
+Teste utilizado no EFS estruturantes
+```sh
+######## Estratégia
+
+### Compress
+
+tar -cf - --ignore-failed-read -C upload2/ . | gzip | split -b 100M - migrate-data/_upload-dir.tar.gz.
+
+#### Extract
+
+cat migrate-data/_upload-dir.tar.gz.* | gunzip | (cd /opt/citsmart/extract-data && tar xf -)
+
+#### Teste realizado
+
+Volume de upload de 1.6GB
+Reduziu para 1.4 GB depois de zipado e dividido.
+
+```
