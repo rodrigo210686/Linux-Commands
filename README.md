@@ -91,3 +91,12 @@ Volume de upload de 1.6GB
 Reduziu para 1.4 GB depois de zipado e dividido.
 
 ```
+
+### COmpactando diretórios
+
+```sh
+tar -czvf - /etc/zabbix/* > zabbix-bkp.tar.gz
+
+```
+
+
