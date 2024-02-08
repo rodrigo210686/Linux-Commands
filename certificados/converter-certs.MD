@@ -13,3 +13,7 @@ Run "sudo update-ca-certificates"
 ```
 ## Gerar novos certificados Csr
 openssl req -new -newkey rsa:2048 -nodes -keyout server.key -out server.csr
+
+## Converter .cer em .pem
+openssl x509 -in cert.cer -out cert.pem
+
