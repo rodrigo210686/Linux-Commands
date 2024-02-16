@@ -17,3 +17,17 @@ openssl req -new -newkey rsa:2048 -nodes -keyout server.key -out server.csr
 ## Converter .cer em .pem
 openssl x509 -in cert.cer -out cert.pem
 
+
+## Gerando requisição de certificado
+```sh
+openssl req -nodes -newkey rsa:2048 -keyout example.key -out example.csr -subj "/C=GB/ST=London/L=London/O=Global Security/OU=IT Department/CN=example.com"
+```
+ou 
+```sh
+#Create client key
+openssl genrsa -out client.key 4096
+
+#Create client CSR
+openssl req -new -key client.key -out client.csr
+
+```
